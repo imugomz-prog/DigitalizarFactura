@@ -36,8 +36,6 @@
 
   <!-- endbuild -->
 
-  <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
-
   <!-- Page CSS -->
 
   <!-- Helpers -->
@@ -53,7 +51,7 @@
   <!-- Layout wrapper -->
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
-      <!-- Menu -->
+     <!-- Menu -->
 
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
@@ -252,210 +250,103 @@
           <!-- Content -->
           <div class="container-xxl flex-grow-1 container-p-y">
             <div class="row">
-              <div class="col-xxl-8 mb-6 order-0">
+              <div class="col-md-12">
+                <div class="nav-align-top">
+                  <ul class="nav nav-pills flex-column flex-md-row mb-6 gap-md-0 gap-2">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="javascript:void(0);"><i
+                          class="icon-base bx bx-user-plus icon-sm me-1_5"></i> Nuevo Producto</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="pages-account-settings-notifications.html"><i
+                          class="icon-base bx bx-edit icon-sm me-1_5"></i> Editar Producto</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card mb-6">
+                  <!-- Account -->
+                  <div class="card-body">
+                    <div class="d-flex align-items-start align-items-sm-center gap-6 pb-4 border-bottom">
+                      <img src="../assets/img/avatars/Producto.jpg" alt="user-avatar" class="d-block w-px-100 h-px-100 rounded"
+                        id="uploadedAvatar" />
+                      <div class="button-wrapper">
+                        <label for="upload" class="btn btn-primary me-3 mb-4" tabindex="0">
+                          <span class="d-none d-sm-block">Subir Foto</span>
+                          <i class="icon-base bx bx-upload d-block d-sm-none"></i>
+                          <input type="file" id="upload" class="account-file-input" hidden
+                            accept="image/png, image/jpeg" />
+                        </label>
+                        <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
+                          <i class="icon-base bx bx-reset d-block d-sm-none"></i>
+                          <span class="d-none d-sm-block">Borrar</span>
+                        </button>
+
+                        <div>Se permite los formatos JPG, GIF or PNG. Tamaño máximo 800K</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body pt-4">
+                    <form id="formAccountSettings" method="POST" onsubmit="return false">
+                      <div class="row g-6">
+                        <div class="col-md-6">
+                          <label for="firstName" class="form-label">ID Producto</label>
+                          <input class="form-control" type="text" id="firstName" name="firstName" value=""
+                            autofocus />
+                        </div>
+                        <div class="col-md-6">
+                          <label for="email" class="form-label">Nombre del Producto</label>
+                          <input class="form-control" type="text" id="email" name="email" value=""
+                            placeholder="" />
+                        </div>
+                        <div class="col-md-6">
+                          <label for="organization" class="form-label">Proveedor</label>
+                          <input type="text" class="form-control" id="organization" name="organization"
+                            value="" />
+                        </div>
+                        <div class="col-md-6">
+                          <label class="form-label" for="phoneNumber">Precio Unitario</label>
+                          <div class="input-group input-group-merge">
+                            <span class="input-group-text"></span>
+                            <input type="text" id="phoneNumber" name="phoneNumber" class="form-control"
+                              placeholder="" />
+                          </div>
+                        </div>
+                        <label class="form-label" for="phoneNumber">Detalle</label>
+                          <div class="input-group input-group-merge">
+                            <span class="input-group-text"></span>
+                            <input type="text" id="phoneNumber" name="phoneNumber" class="form-control"
+                              placeholder="" />
+                          </div>
+                       
+                      </div>
+                      <div class="mt-6">
+                        <button type="submit" class="btn btn-primary me-3">Guardar</button>
+                        <button type="reset" class="btn btn-outline-secondary">Cancelar</button>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- /Account -->
+                </div>
                 <div class="card">
-                  <div class="d-flex align-items-start row">
-                    <div class="col-sm-7">
-                      <div class="card-body">
-                        <h5 class="card-title text-primary mb-3">Felicitaciones IVON! 🎉</h5>
-                        <p class="mb-6">
-                          Estas al dias con todas tus facturas electrónicas.<br />
-                        </p>
-
-                        <a href="javascript:;" class="btn btn-sm btn-outline-primary">Ver Reportes</a>
+                  <h5 class="card-header">Eliminar Producto</h5>
+                  <div class="card-body">
+                    <div class="mb-6 col-12 mb-0">
+                      <div class="alert alert-warning">
+                        <h5 class="alert-heading mb-1">Está seguro que desea eliminar el Prducto?</h5>
                       </div>
                     </div>
-                    <div class="col-sm-5 text-center text-sm-left">
-                      <div class="card-body pb-0 px-0 px-md-6">
-                        <img src="../assets/img/illustrations/man-with-laptop.png" height="175" alt="View Badge User" />
+                    <form id="formAccountDeactivation" onsubmit="return false">
+                      <div class="form-check my-8 ms-2">
+                        <input class="form-check-input" type="checkbox" name="accountActivation"
+                          id="accountActivation" />
+                        <label class="form-check-label" for="accountActivation">Confirmar eliminación de producto</label>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xxl-4 col-lg-12 col-md-4 order-1">
-                <div class="row">
-                  <div class="col-lg-6 col-md-12 col-6 mb-6">
-                    <div class="card h-100">
-                      <div class="card-body">
-                        <div class="card-title d-flex align-items-start justify-content-between mb-4">
-                          <div class="avatar flex-shrink-0">
-                            <img src="../assets/img/icons/unicons/chart-success.png" alt="chart success"
-                              class="rounded" />
-                          </div>
-                          <div class="dropdown">
-                            <button class="btn p-0" type="button" id="cardOpt3" data-bs-toggle="dropdown"
-                              aria-haspopup="true" aria-expanded="false">
-                              <i class="icon-base bx bx-dots-vertical-rounded text-body-secondary"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                              <a class="dropdown-item" href="javascript:void(0);">Ver Más</a>
-                              <a class="dropdown-item" href="javascript:void(0);">Eliminar</a>
-                            </div>
-                          </div>
-                        </div>
-                        <p class="mb-1">Usuarios Registrados</p>
-                        <h4 class="card-title mb-3">$89</h4>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-12 col-6 mb-6">
-                    <div class="card h-100">
-                      <div class="card-body">
-                        <div class="card-title d-flex align-items-start justify-content-between mb-4">
-                          <div class="avatar flex-shrink-0">
-                            <img src="../assets/img/icons/unicons/wallet-info.png" alt="wallet info" class="rounded" />
-                          </div>
-                          <div class="dropdown">
-                            <button class="btn p-0" type="button" id="cardOpt6" data-bs-toggle="dropdown"
-                              aria-haspopup="true" aria-expanded="false">
-                              <i class="icon-base bx bx-dots-vertical-rounded text-body-secondary"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
-                              <a class="dropdown-item" href="javascript:void(0);">Ver Más</a>
-                              <a class="dropdown-item" href="javascript:void(0);">Eliminar</a>
-                            </div>
-                          </div>
-                        </div>
-                        <p class="mb-1">Clientes en Base de Datos</p>
-                        <h4 class="card-title mb-3">$4,679</h4>
-                        <small class="text-success fw-medium"><i class="icon-base bx bx-up-arrow-alt"></i>
-                          +28.42%</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Total Revenue -->
-              <div class="col-12 col-xxl-8 order-2 order-md-3 order-xxl-2 mb-6 total-revenue">
-                <div class="card">
-                  <div class="row row-bordered g-0">
-                    <div class="col-lg-8">
-                      <div class="card-header d-flex align-items-center justify-content-between">
-                        <div class="card-title mb-0">
-                          <h5 class="m-0 me-2">Reporte General/Año</h5>
-                        </div>
-                        <div class="dropdown">
-                          <button class="btn p-0" type="button" id="totalRevenue" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <i class="icon-base bx bx-dots-vertical-rounded icon-lg text-body-secondary"></i>
-                          </button>
-                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="totalRevenue">
-                            <a class="dropdown-item" href="javascript:void(0);">Select All</a>
-                            <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                            <a class="dropdown-item" href="javascript:void(0);">Share</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div id="totalRevenueChart" class="px-3"></div>
-                    </div>
-                    <div class="col-lg-4">
-                      <div class="card-body px-xl-9 py-12 d-flex align-items-center flex-column">
-                        <div class="text-center mb-6">
-                          <div class="btn-group">
-                            <button type="button" class="btn btn-outline-primary">
-                              <script>
-                                document.write(new Date().getFullYear() - 1);
-                              </script>
-                            </button>
-                            <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
-                              data-bs-toggle="dropdown" aria-expanded="false">
-                              <span class="visually-hidden">Toggle Dropdown</span>
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="javascript:void(0);">2025</a></li>
-                              <li><a class="dropdown-item" href="javascript:void(0);">2024</a></li>
-                              <li><a class="dropdown-item" href="javascript:void(0);">2023</a></li>
-                            </ul>
-                          </div>
-                        </div>
-
-                        <div id="growthChart"></div>
-                        <div class="text-center fw-medium my-6">78% Meta alcanzada</div>
-
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--/ Total Revenue -->
-              <div class="col-12 col-md-8 col-lg-12 col-xxl-4 order-3 order-md-2 profile-report">
-                <div class="row">
-                  <div class="col-6 mb-6 payments">
-                    <div class="card h-100">
-                      <div class="card-body">
-                        <div class="card-title d-flex align-items-start justify-content-between mb-4">
-                          <div class="avatar flex-shrink-0">
-                            <img src="../assets/img/icons/unicons/paypal.png" alt="paypal" class="rounded" />
-                          </div>
-                          <div class="dropdown">
-                            <button class="btn p-0" type="button" id="cardOpt4" data-bs-toggle="dropdown"
-                              aria-haspopup="true" aria-expanded="false">
-                              <i class="icon-base bx bx-dots-vertical-rounded text-body-secondary"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt4">
-                              <a class="dropdown-item" href="javascript:void(0);">Ver Más</a>
-                              <a class="dropdown-item" href="javascript:void(0);">Eliminar</a>
-                            </div>
-                          </div>
-                        </div>
-                        <p class="mb-1">Productos/Servicios</p>
-                        <h4 class="card-title mb-3">32 Ítems</h4>
-                        <small class="text-danger fw-medium"><i class="icon-base bx bx-down-arrow-alt"></i>
-                          -14.82%</small>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-6 mb-6 transactions">
-                    <div class="card h-100">
-                      <div class="card-body">
-                        <div class="card-title d-flex align-items-start justify-content-between mb-4">
-                          <div class="avatar flex-shrink-0">
-                            <img src="../assets/img/icons/unicons/cc-primary.png" alt="Credit Card" class="rounded" />
-                          </div>
-                          <div class="dropdown">
-                            <button class="btn p-0" type="button" id="cardOpt1" data-bs-toggle="dropdown"
-                              aria-haspopup="true" aria-expanded="false">
-                              <i class="icon-base bx bx-dots-vertical-rounded text-body-secondary"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="cardOpt1">
-                              <a class="dropdown-item" href="javascript:void(0);">Ver Más</a>
-                              <a class="dropdown-item" href="javascript:void(0);">Eliminar</a>
-                            </div>
-                          </div>
-                        </div>
-                        <p class="mb-1">Facturas Generadas</p>
-                        <h4 class="card-title mb-3">$14,857</h4>
-                        <small class="text-success fw-medium"><i class="icon-base bx bx-up-arrow-alt"></i>
-                          +28.14%</small>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-12 mb-6 profile-report">
-                    <div class="card h-100">
-                      <div class="card-body">
-                        <div
-                          class="d-flex justify-content-between align-items-center flex-sm-row flex-column gap-10 flex-wrap">
-                          <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
-                            <div class="card-title mb-6">
-                              <h5 class="text-nowrap mb-1">Avance/AÑO</h5>
-                              <span class="badge bg-label-warning">2025</span>
-                            </div>
-                            <div class="mt-sm-auto">
-                              <span class="text-success text-nowrap fw-medium"><i
-                                  class="icon-base bx bx-up-arrow-alt"></i> 68.2%</span>
-                            </div>
-                          </div>
-                          <div id="profileReportChart"></div>
-                        </div>
-                      </div>
-                    </div>
+                      <button type="submit" class="btn btn-danger deactivate-account">Eliminar Producto</button>
+                    </form>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
           <!-- / Content -->
 
